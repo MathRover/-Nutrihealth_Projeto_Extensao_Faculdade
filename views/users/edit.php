@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Editar Usuário</title>
-<style>
-  body{font-family:Arial,Helvetica,sans-serif;margin:24px}
-  label{display:block;margin-top:12px}
-  input, select{padding:6px;width:320px;max-width:100%}
-  button{margin-top:16px;padding:8px 12px}
-  .error{color:#b00020}
-</style>
-</head>
-<body>
+<?php include __DIR__ . '/../partials/header.php'; ?>
+
 <h2>Editar Usuário</h2>
-<?php if (!empty($error)): ?><p class="error"><?= htmlspecialchars($error) ?></p><?php endif; ?>
-<form method="post" action="?action=edit&id=<?= (int)$user->id ?>">
-  <label>Nome
-    <input type="text" name="name" required value="<?= htmlspecialchars($user->name) ?>">
-  </label>
-  <label>Email
-    <input type="email" name="email" required value="<?= htmlspecialchars($user->email) ?>">
-  </label>
-  <label>Tipo de Usuário</label>
-  <select name="typeUser" required>
-    <option value="A" <?= $user->typeUser === 'A' ? 'selected' : '' ?>>Administrador</option>
-    <option value="N" <?= $user->typeUser === 'N' ? 'selected' : '' ?>>Nutricionista</option>
-    <option value="U" <?= $user->typeUser === 'U' ? 'selected' : '' ?>>Usuário Comum</option>
-  </select>
-  <button type="submit">Salvar</button>
+<?php if (!empty($error)): ?><p style="color:#ef4444"><?= htmlspecialchars($error) ?></p><?php endif; ?>
+<form method="post" action="?action=edit&id=<?= (int)$user->id ?>" style="max-width:520px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px">
+  <label>Nome<br>
+    <input type="text" name="name" required value="<?= htmlspecialchars($user->name) ?>" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--surface-elev);color:var(--on-surface)">
+  </label><br><br>
+  <label>Email<br>
+    <input type="email" name="email" required value="<?= htmlspecialchars($user->email) ?>" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--surface-elev);color:var(--on-surface)">
+  </label><br><br>
+  <label>Tipo de Usuário<br>
+    <select name="typeUser" required style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--surface-elev);color:var(--on-surface)">
+      <option value="A" <?= $user->typeUser === 'A' ? 'selected' : '' ?>>Administrador</option>
+      <option value="N" <?= $user->typeUser === 'N' ? 'selected' : '' ?>>Nutricionista</option>
+      <option value="U" <?= $user->typeUser === 'U' ? 'selected' : '' ?>>Usuário Comum</option>
+    </select>
+  </label><br><br>
+  <button type="submit" class="btn btn-primary">Salvar</button>
+  <a href="?action=index" class="btn" style="margin-left:8px">Voltar</a>
 </form>
-<p><a href="?action=index">Voltar</a></p>
-</body>
-</html>
+
+<?php include __DIR__ . '/../partials/footer.php'; ?>
