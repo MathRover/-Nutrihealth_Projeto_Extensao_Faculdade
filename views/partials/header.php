@@ -79,7 +79,7 @@
       </div>
       <nav class="nav-group">
         <a class="nav-item <?= ($_GET['action']??'index')==='index'?'active':'' ?>" href="/nutrihealth/public/?action=index"><i data-lucide="users"></i><span class="label">Usuários</span></a>        
-        <a class="nav-item" href="#" onclick="Swal.fire('Em breve','Módulo de relatórios','info')"><i data-lucide="bar-chart-2"></i><span class="label">Relatórios</span></a>
+        <a class="nav-item <?= (isset($_GET['action']) && strpos($_GET['action'], 'reports') === 0) ? 'active' : '' ?>" href="/nutrihealth/public/?action=reports"><i data-lucide="file-text"></i><span class="label">Relatórios de Pacientes</span></a>
       </nav>
     </aside>
     <div class="overlay" id="overlay"></div>
@@ -87,7 +87,13 @@
       <button class="btn" id="btnSidebar" aria-label="Alternar menu"><i data-lucide="menu"></i><span class="label">Menu</span></button>
       <div style="flex:1"></div>
       <button class="btn" id="btnTheme" title="Tema"><i data-lucide="sun"></i></button>
-      <a class="btn btn-primary" href="/nutrihealth/public/?action=create"><i data-lucide="plus"></i> Novo</a>
+      <?php 
+      $currentAction = $_GET['action'] ?? 'index';
+      $newUrl = (strpos($currentAction, 'reports') === 0) 
+        ? '/nutrihealth/public/?action=reports_create' 
+        : '/nutrihealth/public/?action=create';
+      $newLabel = (strpos($currentAction, 'reports') === 0) ? 'Novo Relatório' : 'Novo';
+      ?>
+      <a class="btn btn-primary" href="<?= $newUrl ?>"><i data-lucide="plus"></i> <span class="label"><?= $newLabel ?></span></a>
     </header>
     <main class="content">
-      <div class="page-head"><i data-lucide="layout-grid"></i><div><div class="page-title">Usuários</div><div class="page-sub">Gestão de usuários do sistema</div></div></div>

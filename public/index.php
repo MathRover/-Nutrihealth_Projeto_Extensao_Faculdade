@@ -11,12 +11,24 @@ spl_autoload_register(function ($class) use ($basePath) {
     }
 });
 use App\Controllers\UserController;
+use App\Controllers\PatientReportController;
 $action = $_GET['action'] ?? 'index';
-$controller = new UserController();
-switch ($action) {
-    case 'index':  $controller->index(); break;
-    case 'create': $controller->create(); break;
-    case 'edit':   $controller->edit(); break;
-    case 'delete': $controller->delete(); break;
-    default: http_response_code(404); echo "Rota não encontrada.";
+if (strpos($action, 'reports') === 0) {
+    $controller = new PatientReportController();
+    switch ($action) {
+        case 'reports': $controller->index(); break;
+        case 'reports_create': $controller->create(); break;
+        case 'reports_edit': $controller->edit(); break;
+        case 'reports_delete': $controller->delete(); break;
+        default: http_response_code(404); echo "Rota não encontrada.";
+    }
+} else {
+    $controller = new UserController();
+    switch ($action) {
+        case 'index':  $controller->index(); break;
+        case 'create': $controller->create(); break;
+        case 'edit':   $controller->edit(); break;
+        case 'delete': $controller->delete(); break;
+        default: http_response_code(404); echo "Rota não encontrada.";
+    }
 }

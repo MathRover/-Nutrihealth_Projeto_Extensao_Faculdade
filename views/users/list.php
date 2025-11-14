@@ -1,8 +1,14 @@
 <?php include __DIR__ . '/../partials/header.php'; ?>
 
-<h2 style="margin-top:8px">Lista de Usuários</h2>
+<div class="page-head">
+  <i data-lucide="users"></i>
+  <div>
+    <div class="page-title">Usuários</div>
+    <div class="page-sub">Gestão de usuários do sistema</div>
+  </div>
+</div>
 
-<table style="border-collapse:collapse;width:100%;background:var(--surface);border:1px solid var(--border)">
+<table style="border-collapse:collapse;width:100%;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
   <tr style="background:var(--surface-elev)">
     <th style="padding:10px;border-bottom:1px solid var(--border);text-align:left">ID</th>
     <th style="padding:10px;border-bottom:1px solid var(--border);text-align:left">Nome</th>
