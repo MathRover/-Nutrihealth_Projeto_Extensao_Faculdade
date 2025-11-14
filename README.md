@@ -1,37 +1,54 @@
 NutriHealth — Sistema de Gestão da Clínica de Nutrição
 
-Aplicação desenvolvida como projeto de extensão para a Clínica de Nutrição da Unicesumar (Unidade Londrina/PR).
-O sistema oferece gerenciamento completo de pacientes, avaliações e acompanhamentos clínicos, utilizando uma arquitetura simples e eficiente em PHP.
+Aplicação desenvolvida como projeto de extensão para a Clínica de Nutrição da Unicesumar (Unidade Londrina/PR). O sistema oferece gerenciamento completo de pacientes, avaliações e acompanhamentos clínicos, utilizando PHP Orientado a Objetos com PDO para garantir segurança e organização dos dados.
 
 🧾 Sobre o Sistema
 
-O NutriHealth é uma aplicação web desenvolvida em PHP Orientado a Objetos + PDO, projetada para auxiliar rotinas da clínica, permitindo:
+O NutriHealth foi criado para apoiar as rotinas acadêmicas e profissionais da Clínica de Nutrição. A aplicação permite cadastrar pacientes, registrar avaliações, acompanhar evolução clínica e centralizar informações importantes de forma simples e eficiente.
 
-Cadastro e gerenciamento de pacientes
+📚 Finalidade do Projeto
 
-Registro de avaliações nutricionais
-
-Acompanhamento clínico
-
-Organização dos dados de forma segura e estruturada
-
-📚 Descrição do Projeto
-
-Este sistema foi criado para ser aplicado como projeto de extensão universitária na Clínica de Nutrição do Campus Londrina da Unicesumar, apoiando o atendimento acadêmico e profissional dos estudantes e professores envolvidos.
+Este sistema foi desenvolvido como um projeto de extensão universitária da Unicesumar – Campus Londrina, com o objetivo de auxiliar alunos e profissionais no atendimento nutricional, proporcionando uma ferramenta prática e funcional para uso real dentro da clínica.
 
 🚀 Tecnologias Utilizadas
 
-PHP 8.0.30
+• PHP 8.0.30
+• Apache 2.4.58 (Win64)
+• MariaDB
+• VSCode 1.104.3
 
-Apache 2.4.58 (Win64)
+⚙️ Como Executar
 
-Lounge VS17
+Criar a pasta do projeto em C:\xampp\htdocs\nutrihealth
 
-MariaDB
+Clonar o repositório
 
-VSCode 1.104.3
+Iniciar Apache e MySQL no XAMPP
 
-⚙️ Como Executar o Projeto
-1. Instalação
+Importar o arquivo database.sql no phpMyAdmin
 
-Crie a pasta do projeto:
+Acessar o sistema via navegador em http://localhost/nutrihealth/public
+
+🧪 Testes
+
+Atualmente o sistema não possui testes automatizados, contando apenas com testes manuais para verificação dos fluxos principais.
+
+👨‍💻 Contribuição
+
+Fazer um fork do repositório
+
+Criar uma branch para a nova feature
+
+Realizar os commits
+
+Fazer push da branch
+
+Abrir um Pull Request
+
+📄 Licença
+
+Projeto distribuído sob a licença MIT.
+
+📬 Contato
+
+Email: edenilson.burity@unicesumar.edu.br
